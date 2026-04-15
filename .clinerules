@@ -1,0 +1,38 @@
+# .clinerules for one-frontend-framework
+
+## TypeScript & OOP Standards
+- Use strict typing everywhere; avoid `any` except for explicitly defined utility types.
+- Enforce strict Object-Oriented Programming (OOP) principles throughout the codebase.
+- All code must adhere to SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).
+- Prefer abstract classes and interfaces for extensibility.
+- Use generics for reusable logic.
+- Follow the project's ESLint rules and formatting.
+
+## Architecture
+- Use dependency injection via `tsyringe` for all services.
+- Abstract services must not implement business logic directly; only define contracts.
+- Singleton pattern should be used for shared data services.
+- Favor encapsulation, inheritance, and polymorphism where appropriate.
+
+## Naming Conventions
+- Classes: PascalCase (e.g., `AbstractLanguageService`)
+- Methods: camelCase
+- Constants: UPPER_SNAKE_CASE
+- Files: kebab-case or camelCase, matching exported class/type
+
+## Decorators
+- Use `@singleton` for services that should have a single instance.
+- Enable and use experimental decorators as configured in `tsconfig.json`.
+
+## Code Quality
+- All code must pass ESLint checks as configured in `.eslintrc.json`.
+- No unused variables or parameters.
+- Document all public classes and methods with JSDoc.
+
+## Testing & Build
+- All code must compile with `tsc` and pass linting before merging.
+- Use the `prepare` script to ensure build consistency.
+
+## Contribution
+- Extend abstract services by subclassing, not by modifying base classes.
+- Prefer composition over inheritance where possible.

@@ -29,9 +29,11 @@ export * from './functions/uiHelper';
  */
 export * from './services/abstractLanguageService';
 export * from './services/abstractLoadingService';
-export * from './services/abstractLogggingService';
-export * from './services/abstractLogggingService';
+export * from './services/abstractLoggingService';
 export * from './services/abstractStorageService';
+export * from './services/abstractHttpService';
+export * from './services/abstractRoutingService';
+export * from './services/abstractValidationService';
 
 /**
  * Export data services
