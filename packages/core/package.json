@@ -1,0 +1,41 @@
+{
+  "name": "one-frontend-framework",
+  "version": "0.0.6",
+  "description": "Abstract base framework for frontend",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vosonha89/one-frontend-framework.git"
+  },
+  "keywords": [
+    "typescript frontend",
+    "abstract frontend"
+  ],
+  "author": "vosonha89",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vosonha89/one-frontend-framework/issues"
+  },
+  "homepage": "https://github.com/vosonha89/one-frontend-framework#readme",
+  "scripts": {
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run lint && npx tsc",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "tsyringe": "^4.7.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "typescript": "^4.9.5"
+  }
+}

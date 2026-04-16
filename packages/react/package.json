@@ -1,0 +1,8 @@
+{
+  "name": "@one-framework/react",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {},
+  "description": "React adapter for one-frontend-framework"
+}

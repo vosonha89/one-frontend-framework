@@ -1,84 +1,46 @@
 # one-frontend-framework
 
-[![vosonha89](https://circleci.com/gh/vosonha89/one-frontend-framework.svg?style=svg)](https://circleci.com/gh/vosonha89/one-frontend-framework)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvosonha89%2Fone-frontend-framework.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvosonha89%2Fone-frontend-framework?ref=badge_shield)
+Monorepo for a framework-agnostic frontend architecture with adapters for Angular, React, and Vue.
 
 ---
 
-## Overview
-
-**one-frontend-framework** is an abstract, framework-agnostic TypeScript base for building scalable frontend applications. It enforces strict OOP, SOLID principles, and dependency injection, and is designed to be extended for Angular, React, and Vue.js.
-
----
-
-## Features
-
-- Abstract base classes for language, loading, logging, storage, and state
-- Singleton data sharing services (standard and real-time with RxJS)
-- Strict typing and interface-driven contracts
-- Dependency injection via `tsyringe`
-- Utilities for currency, UUID, random numbers, async, object/UI helpers
-- Centralized constants for codes, messages, HTTP, status, storage
-- Ready for extension with framework-specific adapters
-
----
-
-## Architecture
+## Structure
 
 ```
 one-frontend-framework/
-├── src/
-│   ├── constants/
-│   ├── functions/
-│   ├── services/      # Abstract and concrete services
-│   └── types/
-├── examples/          # (planned) Example apps for Angular, React, Vue
-├── README.md
-└── package.json
+├── packages/
+│   ├── core/      # Core framework (abstract services, utilities, types)
+│   ├── angular/   # Angular adapter (scaffold)
+│   ├── react/     # React adapter (scaffold)
+│   └── vue/       # Vue adapter (scaffold)
+├── package.json   # npm workspaces config
+├── tsconfig.json  # TypeScript project references
+└── README.md      # This file
 ```
 
-- **Abstract Services:** Define contracts for language, loading, logging, storage, etc.
-- **Data Sharing:** Singleton services for shared and real-time data (RxJS)
-- **Utilities:** Common helpers for formatting, objects, UI, etc.
+## Getting Started
 
----
+1. **Install dependencies:**  
+   ```sh
+   npm install
+   ```
 
-## Usage Example
+2. **Build core package:**  
+   ```sh
+   npm run build
+   ```
 
-```typescript
-import { AbstractLanguageService, SharingDataService } from 'one-frontend-framework';
+3. **Add your framework adapter implementation in `packages/angular`, `packages/react`, or `packages/vue`.**
 
-// Extend abstract services for your framework:
-class MyLanguageService extends AbstractLanguageService<MyStorageService> {
-  public setLanguage(value: string): void { /* ... */ }
-  public getLanguageText(value: string): void { /* ... */ }
-}
-```
+## Contributing
 
----
+- Core framework code is in `packages/core`.
+- Each adapter should live in its own package.
+- Use npm workspaces for dependency management.
 
-## Planned Framework Adapters
+## Roadmap
 
-- **Angular:** Injectable services, RxJS, i18n, Material integration
-- **React:** Context providers, hooks, react-i18next, portals
-- **Vue:** Composables, plugins, vue-i18n, Teleport
-
-Adapters will be published as separate packages:
-- `one-angular`
-- `one-react`
-- `one-vue`
-
----
-
-## Contribution Roadmap
-
-- [x] Core abstractions and services
-- [ ] Add framework adapter packages
-- [ ] Add example apps for Angular, React, Vue
-- [ ] Add unit/integration tests
-- [ ] Expand utilities and documentation
-
----
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvosonha89%2Fone-frontend-framework.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvosonha89%2Fone-frontend-framework?ref=badge_large)
+- [x] Monorepo structure with core and adapter packages
+- [ ] Implement Angular, React, Vue adapters
+- [ ] Add example/demo apps
+- [ ] Add tests and CI
