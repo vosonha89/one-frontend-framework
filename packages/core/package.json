@@ -1,5 +1,5 @@
 {
-  "name": "one-frontend-framework",
+  "name": "@one-framework/core",
   "version": "0.0.6",
   "description": "Abstract base framework for frontend",
   "main": "lib/index.js",

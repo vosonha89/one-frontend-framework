@@ -2,14 +2,11 @@
   "name": "one-frontend-framework",
   "private": true,
   "workspaces": [
-    "packages/core",
-    "packages/angular",
-    "packages/react",
-    "packages/vue"
+    "packages/core"
   ],
   "scripts": {
-    "build": "npm run build --workspace=core",
-    "lint": "npm run lint --workspace=core",
-    "test": "npm run test --workspace=core"
+    "build": "npm run build --workspace=@one-framework/core",
+    "lint": "npm run lint --workspace=@one-framework/core",
+    "test": "npm run test --workspace=@one-framework/core"
   }
 }
